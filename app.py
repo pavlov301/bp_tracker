@@ -15,8 +15,8 @@ app = Flask(__name__)
 
 # Database configuration
 if os.environ.get('PYTHONANYWHERE_DOMAIN'):
-    # Use /tmp directory which is writable on PythonAnywhere
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/bp_readings.db'
+    # Use a private directory in the user's home folder
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/paulrichardson25/bp_tracker/instance/bp_readings.db'
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bp_readings.db'
 
